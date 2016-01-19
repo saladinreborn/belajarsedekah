@@ -138,10 +138,10 @@ if ( ! function_exists('_list'))
 		// encountered we will recursively call _list()
 
 		static $_last_list_item = '';
+	
 		foreach ($list as $key => $val)
 		{
 			$_last_list_item = $key;
-
 			$out .= str_repeat(' ', $depth + 2).'<li>';
 
 			if ( ! is_array($val))
@@ -150,7 +150,7 @@ if ( ! function_exists('_list'))
 			}
 			else
 			{
-				$out .= $_last_list_item."\n"._list($type, $val, '', $depth + 4).str_repeat(' ', $depth + 2);
+				$out .= $_last_list_item."\n"._list($type, $val,'', $depth + 4).str_repeat(' ', $depth + 2);
 			}
 
 			$out .= "</li>\n";
